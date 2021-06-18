@@ -8,7 +8,7 @@ public class File extends StorageItem
         return this.extension;
     }
 
-    File(String name, String extension)
+    public File(String name, String extension)
     {
         super(name);
         this.extension = extension;

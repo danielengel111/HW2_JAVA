@@ -17,7 +17,7 @@ public abstract class StorageItem
         return this.date;
     }
 
-    StorageItem(String name)
+    public StorageItem(String name)
     {
         this.name = name;
         this.date = createDate();

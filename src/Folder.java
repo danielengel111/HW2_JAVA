@@ -3,9 +3,9 @@ import java.util.Date;
 
 public class Folder extends StorageItem
 {
-    protected ArrayList<StorageItem> item_list;
+    private ArrayList<StorageItem> item_list;
 
-    Folder(String name)
+    public Folder(String name)
     {
         super(name);
         item_list = new ArrayList<>();
