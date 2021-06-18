@@ -8,7 +8,7 @@ public class Folder extends StorageItem
     public Folder(String name)
     {
         super(name);
-        item_list = new ArrayList<>();
+        this.item_list = new ArrayList<>();
     }
 
     public boolean addItem(StorageItem item)
