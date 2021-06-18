@@ -6,6 +6,16 @@ public class Main {
     public static void main(String[] args) {
         rnd = new Random(42);
 
+        File file = new File("sabah", "py");
+        System.out.println(file.getDate());
+        File file1 = new File("sabah", "py");
+        System.out.println(file1.getDate());
+        File file2 = new File("sabah", "py");
+        System.out.println(file2.getDate());
+        File file3 = new File("sabah", "py");
+        System.out.println(file3.getDate());
+
+        /*
         Folder fo1 = new Folder("B");
         File fi1 = new File("bye", "log");
         fo1.addItem(fi1);
@@ -59,5 +69,6 @@ public class Main {
         temp1.addItem(new File("test1", "cs"));
 
         f.printTree(SortingField.NAME);
+        */
     }
 }

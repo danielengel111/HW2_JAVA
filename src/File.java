@@ -1,12 +1,18 @@
 public class File extends StorageItem
 {
-    protected String extension;
-    protected String content;
+    private String extension;
+    private String content;
+
+    public String getExtension()
+    {
+        return this.extension;
+    }
 
     File(String name, String extension)
     {
         super(name);
         this.extension = extension;
+        this.content = "";
     }
 
     @Override
@@ -17,7 +23,7 @@ public class File extends StorageItem
 
     public String getName()
     {
-        return this.name + "." + this.extension;
+        return getName() + "." + this.extension;
     }
 
     public void addContent(String contentToAdd)
@@ -27,7 +33,7 @@ public class File extends StorageItem
 
     public void printContent()
     {
-        System.out.println(this.getName() + "Size: " + this.getSize() + "MB Created: " + this.date);
+        System.out.println(this.getName() + " Size: " + this.getSize() + "MB Created: " + getDate());
         System.out.println(this.content);
     }
 }

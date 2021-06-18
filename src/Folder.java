@@ -8,7 +8,7 @@ public class Folder extends StorageItem
     Folder(String name)
     {
         super(name);
-        this.item_list = null;
+        item_list = new ArrayList<>();
     }
 
     public boolean addItem(StorageItem item)
@@ -17,14 +17,14 @@ public class Folder extends StorageItem
         {
             if(x instanceof File && item instanceof File)
             {
-                if(x.name == item.name && ((File) x).extension == ((File) item).extension)
+                if(((File) x).getName() == ((File) item).getName() && ((File) x).getExtension() == ((File) item).getExtension())
                 {
                     return false;
                 }
             }
             else if(x instanceof Folder && item instanceof Folder)
             {
-                if(x.name == item.name)
+                if(x.getName() == item.getName())
                 {
                     return false;
                 }
