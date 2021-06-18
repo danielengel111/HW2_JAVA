@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Folder extends StorageItem
 {
@@ -7,7 +8,7 @@ public class Folder extends StorageItem
     Folder(String name)
     {
         super(name);
-
+        this.item_list = null;
     }
 
     public boolean addItem(StorageItem item)
@@ -32,9 +33,20 @@ public class Folder extends StorageItem
         item_list.add(item);
         return true;
     }
-
+/*
     public File findFile(String path)
     {
 
+    }
+*/
+    @Override
+    public int getSize()
+    {
+        int size_sum = 0;
+        for(StorageItem item : this.item_list)
+        {
+            size_sum += item.getSize();
+        }
+        return size_sum;
     }
 }
