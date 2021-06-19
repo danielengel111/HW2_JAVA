@@ -3,17 +3,17 @@ import java.util.Date;
 
 public class Folder extends StorageItem
 {
-    private ArrayList<StorageItem> item_list;
+    private ArrayList<StorageItem> itemList;
 
     public Folder(String name)
     {
         super(name);
-        this.item_list = new ArrayList<>();
+        this.itemList = new ArrayList<>();
     }
 
     public boolean addItem(StorageItem item)
     {
-        for(StorageItem x : item_list)
+        for(StorageItem x : itemList)
         {
             if(x instanceof File && item instanceof File)
             {
@@ -30,7 +30,7 @@ public class Folder extends StorageItem
                 }
             }
         }
-        item_list.add(item);
+        itemList.add(item);
         return true;
     }
 /*
@@ -43,7 +43,7 @@ public class Folder extends StorageItem
     public int getSize()
     {
         int size_sum = 0;
-        for(StorageItem item : this.item_list)
+        for(StorageItem item : this.itemList)
         {
             size_sum += item.getSize();
         }
