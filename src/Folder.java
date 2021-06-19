@@ -13,18 +13,18 @@ public class Folder extends StorageItem
 
     public boolean addItem(StorageItem item)
     {
-        for(StorageItem x : itemList)
+        for(StorageItem curItem : itemList)
         {
-            if(x instanceof File && item instanceof File)
+            if(curItem instanceof File && item instanceof File)
             {
-                if(((File) x).getName() == ((File) item).getName() && ((File) x).getExtension() == ((File) item).getExtension())
+                if(((File) curItem).getName() == ((File) item).getName() && ((File) curItem).getExtension() == ((File) item).getExtension())
                 {
                     return false;
                 }
             }
-            else if(x instanceof Folder && item instanceof Folder)
+            else if(curItem instanceof Folder && item instanceof Folder)
             {
-                if(x.getName() == item.getName())
+                if(curItem.getName() == item.getName())
                 {
                     return false;
                 }
