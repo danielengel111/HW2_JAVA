@@ -17,7 +17,9 @@ public class Folder extends StorageItem
         {
             if(curItem instanceof File && item instanceof File)
             {
-                if(((File) curItem).getName() == ((File) item).getName() && ((File) curItem).getExtension() == ((File) item).getExtension())
+                if(curItem.getName() == item.getName() &&
+                        ((File) curItem).getExtension() ==
+                                ((File) item).getExtension())
                 {
                     return false;
                 }
