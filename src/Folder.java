@@ -15,7 +15,7 @@ public class Folder extends StorageItem
     {
         for(StorageItem curItem : itemList)
         {
-            if(curItem instanceof File && item instanceof File)
+            /*if(curItem instanceof File && item instanceof File)
             {
                 if(curItem.getName().equals(item.getName()) &&
                         ((File) curItem).getExtension().
@@ -30,7 +30,9 @@ public class Folder extends StorageItem
                 {
                     return false;
                 }
-            }
+            }*/
+            if(curItem.getName().equals(item.getName()))
+                return false;
         }
         itemList.add(item);
         return true;
