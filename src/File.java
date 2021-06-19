@@ -21,9 +21,10 @@ public class File extends StorageItem
         return this.content.length();
     }
 
+    @Override
     public String getName()
     {
-        return getName() + "." + this.extension;
+        return this.name + "." + this.extension;
     }
 
     public void addContent(String contentToAdd)
