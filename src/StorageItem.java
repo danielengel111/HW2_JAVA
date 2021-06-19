@@ -4,12 +4,20 @@ import java.util.Date;
 
 public abstract class StorageItem
 {
-    private String name;
-    private Date date;
+    protected String name;
+    protected final Date date;
 
     public String getName()
     {
         return this.name;
+    }
+
+    /**
+     * setter for 'name' attribute
+     * @param name - the new name of the instance
+     */
+    public void setName(String name){
+        this.name = name;
     }
 
     public Date getDate()
@@ -25,8 +33,12 @@ public abstract class StorageItem
 
     public Date createDate()
     {
-        Timestamp maxDate = new Timestamp(2021 - 1900, 12, 31, 23, 59, 59, 0);
-        Timestamp minDate = new Timestamp(2017 - 1900, 1, 1, 0, 0, 0, 0);
+        Timestamp maxDate = new
+                Timestamp(2021 - 1900, 12,
+                31, 23, 59, 59, 0);
+        Timestamp minDate = new
+                Timestamp(2017 - 1900, 1,
+                1, 0, 0, 0, 0);
         long range = maxDate.getTime() - minDate.getTime();
         long randTime = Math.abs(Main.rnd.nextLong()) % range;
         return new Date(minDate.getTime() + randTime);
