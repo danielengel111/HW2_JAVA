@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Folder extends StorageItem
@@ -79,5 +80,27 @@ public class Folder extends StorageItem
             size_sum += item.getSize();
         }
         return size_sum;
+    }
+
+    /**
+     * sorts the itemList according to the sorting field given
+     * @param field - sorting by this field
+     */
+    public void sortList(SortingField field){
+        switch(field){
+            case NAME://sorting by name
+                itemList.sort(Comparator.comparing(StorageItem::getName));
+                break;
+            case SIZE://sorting by size
+                itemList.sort(Comparator.comparing(StorageItem::getSize).
+                        thenComparing(StorageItem::getName));
+                break;
+            case DATE://sorting by date
+                itemList.sort(Comparator.comparing(StorageItem::getDate).
+                        thenComparing(StorageItem::getName));
+        }
+        for(StorageItem item:itemList)//sort every nested folder
+            if(item instanceof Folder)
+                ((Folder)item).sortList(field);
     }
 }

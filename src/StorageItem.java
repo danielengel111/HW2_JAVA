@@ -1,3 +1,4 @@
+import javax.naming.Name;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -14,7 +15,7 @@ public abstract class StorageItem
 
     /**
      * setter for 'name' attribute
-     * @param name - the new name of the instance
+     * @param name the name for the instance
      */
     public void setName(String name){
         this.name = name;
@@ -48,6 +49,10 @@ public abstract class StorageItem
 
     void printTree(SortingField field)
     {
-
+        if(this instanceof File){
+            System.out.println(this.getName());
+            return;
+        }
+        ((Folder)this).sortList(field);
     }
 }
