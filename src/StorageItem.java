@@ -48,6 +48,10 @@ public abstract class StorageItem
 
     public abstract int getSize();
 
+    /**
+     * printing the system's tree starting from this item
+     * @param field - the sorting method we'll use
+     */
     public void printTree(SortingField field)
     {
         if(this instanceof File){
