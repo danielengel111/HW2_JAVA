@@ -7,6 +7,7 @@ public abstract class StorageItem
 {
     protected String name;
     protected final Date date;
+    public static final String SEPARATOR = "|    ";
 
     public String getName()
     {
@@ -47,12 +48,16 @@ public abstract class StorageItem
 
     public abstract int getSize();
 
-    void printTree(SortingField field)
+    public void printTree(SortingField field)
     {
         if(this instanceof File){
             System.out.println(this.getName());
             return;
         }
         ((Folder)this).sortList(field);
+        //now the list is sorted according to the field given
+
+        //printing the tree
+        ((Folder) this).print("");
     }
 }

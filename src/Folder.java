@@ -103,4 +103,22 @@ public class Folder extends StorageItem
             if(item instanceof Folder)
                 ((Folder)item).sortList(field);
     }
+
+    /**
+     * prints the folder, and all of its items
+     * @param prefix - the start of the current printing (separators to print
+     *               beforehand)
+     */
+    public void print(String prefix){
+        System.out.println(prefix + this.getName());
+        prefix += SEPARATOR;//add another separator
+        for(StorageItem item:itemList){
+            if(item instanceof File) {//if that's a file, just print its name
+                System.out.println(prefix + item.getName());
+                continue;
+            }
+            ((Folder)item).print(prefix);
+            //otherwise it's a folder, print the nested folder
+        }
+    }
 }
