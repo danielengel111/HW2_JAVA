@@ -36,6 +36,9 @@ public abstract class StorageItem
 
     public Date createDate()
     {
+        /**
+         *create random date between years 2017 - 2021
+         */
         Timestamp maxDate = new
                 Timestamp(2021 - 1900, 11,
                 31, 23, 59, 59, 0);
@@ -43,7 +46,7 @@ public abstract class StorageItem
                 Timestamp(2017 - 1900, 0,
                 1, 0, 0, 0, 0);
         long range = maxDate.getTime() - minDate.getTime();
-        long randTime = Math.abs(Main.rnd.nextLong()) % range;
+        long randTime = Math.abs(Main.rnd.nextLong()) % range; //we use abs because random number might be negative
         return new Date(minDate.getTime() + randTime);
     }
 

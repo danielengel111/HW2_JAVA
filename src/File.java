@@ -36,6 +36,9 @@ public class File extends StorageItem
 
     public void printContent()
     {
+        /**
+         * print file size, date of creation, and the content of the file
+         */
         Timestamp t = new Timestamp(getDate().getTime());
         System.out.println(this.getName()
                 + " Size: " + this.getSize() + "MB Created: " + t);

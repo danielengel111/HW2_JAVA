@@ -74,6 +74,10 @@ public class Folder extends StorageItem
     @Override
     public int getSize()
     {
+        /**
+         * iterates through all items in the folder and sum their size
+         * @return the sum
+         */
         int size_sum = 0;
         for(StorageItem item : this.itemList)
         {
