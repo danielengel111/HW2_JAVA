@@ -66,7 +66,7 @@ public class Folder extends StorageItem
                 // is it the next folder in the path?
                 if(curItem.getName().equals(curName))
                     // return the file from the nested folder, if it is there
-                    return ((Folder)curItem).findFile(path.substring(i));
+                    return ((Folder)curItem).findFile(path.substring(i+1));
         }
         return null; //found no such item
     }
