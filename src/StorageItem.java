@@ -37,10 +37,10 @@ public abstract class StorageItem
     public Date createDate()
     {
         Timestamp maxDate = new
-                Timestamp(2021 - 1900, 12,
+                Timestamp(2021 - 1900, 11,
                 31, 23, 59, 59, 0);
         Timestamp minDate = new
-                Timestamp(2017 - 1900, 1,
+                Timestamp(2017 - 1900, 0,
                 1, 0, 0, 0, 0);
         long range = maxDate.getTime() - minDate.getTime();
         long randTime = Math.abs(Main.rnd.nextLong()) % range;
