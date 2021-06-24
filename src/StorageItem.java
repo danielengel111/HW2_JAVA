@@ -19,8 +19,10 @@ public abstract class StorageItem
         this.date = createDate();
     }
 
+
     /**
      * getter for name of file
+     * @return the file's name
      */
     public String getName()
     {
@@ -37,6 +39,7 @@ public abstract class StorageItem
 
     /**
      * getter for date of creation of the file
+     * @return the file's date
      */
     public Date getDate()
     {
@@ -44,7 +47,8 @@ public abstract class StorageItem
     }
 
     /**
-     *create random date between years 2017 - 2021
+     * create random date between years 2017 - 2021
+     * @return a randomly generated date
      */
     public Date createDate()
     {
@@ -55,7 +59,8 @@ public abstract class StorageItem
                 Timestamp(2017 - 1900, 0,
                 1, 0, 0, 0, 0);
         long range = maxDate.getTime() - minDate.getTime();
-        long randTime = Math.abs(Main.rnd.nextLong()) % range; //we use abs because random number might be negative
+        long randTime = Math.abs(Main.rnd.nextLong()) % range;
+        //we use abs because random number might be negative
         return new Date(minDate.getTime() + randTime);
     }
 
