@@ -10,6 +10,18 @@ public abstract class StorageItem
     protected final Date date;
     public static final String SEPARATOR = "|    ";
 
+    /**
+     * initialize class attributes
+     */
+    public StorageItem(String name)
+    {
+        this.name = name;
+        this.date = createDate();
+    }
+
+    /**
+     * getter for name of file
+     */
     public String getName()
     {
         return this.name;
@@ -23,22 +35,19 @@ public abstract class StorageItem
         this.name = name;
     }
 
+    /**
+     * getter for date of creation of the file
+     */
     public Date getDate()
     {
         return this.date;
     }
 
-    public StorageItem(String name)
-    {
-        this.name = name;
-        this.date = createDate();
-    }
-
+    /**
+     *create random date between years 2017 - 2021
+     */
     public Date createDate()
     {
-        /**
-         *create random date between years 2017 - 2021
-         */
         Timestamp maxDate = new
                 Timestamp(2021 - 1900, 11,
                 31, 23, 59, 59, 0);

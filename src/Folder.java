@@ -6,32 +6,25 @@ public class Folder extends StorageItem
 {
     private ArrayList<StorageItem> itemList;
 
+    /**
+     * initialize class attributes
+     */
     public Folder(String name)
     {
         super(name);
         this.itemList = new ArrayList<>();
     }
 
+    /**
+     * add item to folder given that no item
+     * with identical name already exists in folder
+     * @return true if succeeded in adding the item,
+     * otherwise return false
+     */
     public boolean addItem(StorageItem item)
     {
         for(StorageItem curItem : itemList)
         {
-            /*if(curItem instanceof File && item instanceof File)
-            {
-                if(curItem.getName().equals(item.getName()) &&
-                        ((File) curItem).getExtension().
-                                equals(((File) item).getExtension()))
-                {
-                    return false;
-                }
-            }
-            else if(curItem instanceof Folder && item instanceof Folder)
-            {
-                if(curItem.getName().equals(item.getName()))
-                {
-                    return false;
-                }
-            }*/
             if(curItem.getName().equals(item.getName()))
                 return false;
         }
@@ -71,13 +64,13 @@ public class Folder extends StorageItem
         return null; //found no such item
     }
 
+    /**
+     * iterates through all items in the folder and sum their size
+     * @return the sum
+     */
     @Override
     public int getSize()
     {
-        /**
-         * iterates through all items in the folder and sum their size
-         * @return the sum
-         */
         int size_sum = 0;
         for(StorageItem item : this.itemList)
         {
