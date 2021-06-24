@@ -1,3 +1,5 @@
+import java.sql.Timestamp;
+
 public class File extends StorageItem
 {
     private String extension;
@@ -34,8 +36,9 @@ public class File extends StorageItem
 
     public void printContent()
     {
+        Timestamp t = new Timestamp(getDate().getTime());
         System.out.println(this.getName()
-                + " Size: " + this.getSize() + "MB Created: " + getDate());
+                + " Size: " + this.getSize() + "MB Created: " + t);
         System.out.println(this.content);
     }
 
